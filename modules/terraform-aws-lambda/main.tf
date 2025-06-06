@@ -63,6 +63,10 @@ handler       = "stop_lambda_function.lambda_handler"
 runtime       = "python3.12"
 filename      = "stop_lambda_function_payload.zip"
 source_code_hash =  data.archive_file.lambda_stop.output_base64sha256
+  environment {
+     variables = {
+     INSTANCE_ID = var.instance_id
+     }
 }
 data "archive_file" "lambda_start" {
   type        = "zip"
@@ -77,6 +81,10 @@ handler       = "start_lambda_function.lambda_handler"
 runtime       = "python3.12"
 filename      = "start_lambda_function_payload.zip"
 source_code_hash =  data.archive_file.lambda_start.output_base64sha256
+  environment {
+     variables = {
+     INSTANCE_ID = var.instance_id
+     }
 }
 
 

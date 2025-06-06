@@ -14,4 +14,5 @@ module "ec2" {
 
 module "lambda" {
     source = "./modules/terraform-aws-lambda"
+    instance_id = var.instance_id
 }

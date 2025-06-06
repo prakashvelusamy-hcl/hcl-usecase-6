@@ -1,5 +1,6 @@
-import boto3  
-region = 'us-west-1'
+import boto3
+import os
+region = 'ap-south1'
 instances = os.environ['INSTANCE_ID']
 ec2 = boto3.client('ec2', region_name=region)
 

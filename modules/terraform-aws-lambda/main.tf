@@ -97,7 +97,7 @@ resource "aws_lambda_permission" "allow_cloudwatch" {
   source_arn    = aws_cloudwatch_event_rule.stop_ec2_daily.arn
 }
 
-resource "aws_cloudwatch_event_target" "trigger_lambda" {
+resource "aws_cloudwatch_event_target" "stop_trigger_lambda" {
   rule      = aws_cloudwatch_event_rule.stop_ec2_daily.name
   target_id = "StopEC2Lambda"
   arn       = aws_lambda_function.stop_ec2_instances.arn
@@ -118,7 +118,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_start" {
   source_arn    = aws_cloudwatch_event_rule.start_ec2_daily.arn
 }
 
-resource "aws_cloudwatch_event_target" "trigger_lambda" {
+resource "aws_cloudwatch_event_target" "start_trigger_lambda" {
   rule      = aws_cloudwatch_event_rule.start_ec2_daily.name
   target_id = "StopEC2Lambda"
   arn       = aws_lambda_function.start_ec2_instances.arn

@@ -55,7 +55,7 @@ jobs:
           tar -xzf terraform-docs.tar.gz
           chmod +x terraform-docs
           sudo mv terraform-docs /usr/local/bin/
-            - name: Generate Terraform Docs
+          
       - name: Generate terraform-docs
         run: |
           terraform-docs markdown table . > README.md

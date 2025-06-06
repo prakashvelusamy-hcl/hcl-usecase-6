@@ -16,3 +16,7 @@ variable "nat_count" {
   description = "Number of NAT gateways"
   type        = number
 }
+variable "vpc_cidr" {
+  description = "CIDR block for the VPC"
+  type        = string
+}

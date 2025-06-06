@@ -68,6 +68,7 @@ source_code_hash =  data.archive_file.lambda_stop.output_base64sha256
      INSTANCE_ID = var.instance_id
      }
 }
+}
 data "archive_file" "lambda_start" {
   type        = "zip"
   source_file = "${path.module}/start_lambda_function.py"

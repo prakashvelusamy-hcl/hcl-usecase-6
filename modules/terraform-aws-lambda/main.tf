@@ -120,7 +120,7 @@ resource "aws_cloudwatch_event_rule" "start_ec2_daily" {
   name                = "start-ec2-daily"
   description         = "Triggers Lambda to start EC2 instances daily"
   #schedule_expression = "cron(0 08 * * ? *)" 
-  schedule_expression = var.instance_star_time
+  schedule_expression = var.instance_start_time
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_start" {

@@ -16,5 +16,5 @@ module "lambda" {
     source = "./modules/terraform-aws-lambda"
     instance_id = var.instance_id
     instance_start_time = var.instance_start_time
-    instance_stop_time = instance_stop_time
+    instance_stop_time = var.instance_stop_time
 }

@@ -86,6 +86,7 @@ source_code_hash =  data.archive_file.lambda_start.output_base64sha256
      INSTANCE_ID = var.instance_id
      }
 }
+}
 
 
 

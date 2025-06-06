@@ -62,7 +62,7 @@ role          = aws_iam_role.lambda_ec2_control.arn
 handler       = "stop_lambda_function.lambda_handler"
 runtime       = "python3.12"
 filename      = "stop_lambda_function_payload.zip"
-source_code_hash = filebase64sha256("stop_lambda_function_payload.zip")
+source_code_hash =  data.archive_file.lambda_stop.output_base64sha256
 }
 data "archive_file" "lambda_start" {
   type        = "zip"
@@ -76,7 +76,7 @@ role          = aws_iam_role.lambda_ec2_role.arn
 handler       = "start_lambda_function.lambda_handler"
 runtime       = "python3.12"
 filename      = "start_lambda_function_payload.zip"
-source_code_hash = filebase64sha256("start_lambda_function_payload.zip")
+source_code_hash =  data.archive_file.lambda_start.output_base64sha256
 }
 
 

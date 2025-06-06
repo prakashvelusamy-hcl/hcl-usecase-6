@@ -97,7 +97,8 @@ source_code_hash =  data.archive_file.lambda_start.output_base64sha256
 resource "aws_cloudwatch_event_rule" "stop_ec2_daily" {
   name                = "stop-ec2-daily"
   description         = "Triggers Lambda to stop EC2 instances daily"
-  schedule_expression = "cron(0 17 * * ? *)"
+  schedule_expression = var.instance_stop_time
+  #schedule_expression = "cron(0 17 * * ? *)"
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch" {
@@ -118,7 +119,8 @@ resource "aws_cloudwatch_event_target" "stop_trigger_lambda" {
 resource "aws_cloudwatch_event_rule" "start_ec2_daily" {
   name                = "start-ec2-daily"
   description         = "Triggers Lambda to start EC2 instances daily"
-  schedule_expression = "cron(0 08 * * ? *)" 
+  #schedule_expression = "cron(0 08 * * ? *)" 
+  schedule_expression = var.instance_star_time
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_start" {

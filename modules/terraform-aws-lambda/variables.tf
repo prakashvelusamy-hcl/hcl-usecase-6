@@ -1,4 +1,4 @@
-variable "instance_id" {
+variable "public_instance_ids" {
 description = "Instance ID we want to stop and start"
 type = list(string)
 }

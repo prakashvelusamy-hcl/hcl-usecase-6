@@ -1,6 +1,6 @@
-variable "public_instance" {
-  description = "Number of public EC2 instances to create"
-  type        = number
+variable "vpc_cidr" {
+  description = "CIDR block for the VPC"
+  type        = string
 }
 variable "pub_sub_count" {
   description = "Number of public subnets"

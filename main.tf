@@ -9,6 +9,7 @@ module "ec2" {
     source = "./modules/terraform-aws-ec2"
     public_instance = var.public_instance
     vpc_id = module.vpc.vpc_id
+    public_subnet_ids=var.public_subnet_ids
 }
 
 module "lambda" {

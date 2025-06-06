@@ -65,7 +65,7 @@ filename      = "${path.module}/stop_lambda_function_payload.zip"
 source_code_hash =  data.archive_file.lambda_stop.output_base64sha256
   environment {
      variables = {
-     INSTANCE_ID = var.instance_id[0]
+     INSTANCE_ID = var.instance_id
      }
 }
 }
@@ -81,11 +81,11 @@ role          = aws_iam_role.lambda_ec2_control.arn
 handler       = "start_lambda_function.lambda_handler"
 runtime       = "python3.12"
 filename      = "${path.module}/start_lambda_function_payload.zip"
-timeout       = 30  
+timeout       = 30
 source_code_hash =  data.archive_file.lambda_start.output_base64sha256
   environment {
      variables = {
-     INSTANCE_ID = var.instance_id[0]
+     INSTANCE_ID = var.instance_id
      }
 }
 }

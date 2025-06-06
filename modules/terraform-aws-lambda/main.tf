@@ -72,7 +72,7 @@ data "archive_file" "lambda_start" {
 
 resource "aws_lambda_function" "start_ec2_instances" {
 function_name = "start-ec2-instances"
-role          = aws_iam_role.lambda_ec2_role.arn
+role          = aws_iam_role.lambda_ec2_control.arn
 handler       = "start_lambda_function.lambda_handler"
 runtime       = "python3.12"
 filename      = "start_lambda_function_payload.zip"

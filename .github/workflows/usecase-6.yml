@@ -18,7 +18,7 @@ on:
 
 permissions:
   id-token: write
-  contents: read
+  contents: write
 
 jobs:
   terraform:
@@ -55,7 +55,7 @@ jobs:
           tar -xzf terraform-docs.tar.gz
           chmod +x terraform-docs
           sudo mv terraform-docs /usr/local/bin/
-          
+
       - name: Generate terraform-docs
         run: |
           terraform-docs markdown table . > README.md

@@ -90,10 +90,6 @@ source_code_hash =  data.archive_file.lambda_start.output_base64sha256
 }
 }
 
-
-
-
-
 resource "aws_cloudwatch_event_rule" "stop_ec2_daily" {
   name                = "stop-ec2-daily"
   description         = "Triggers Lambda to stop EC2 instances daily"

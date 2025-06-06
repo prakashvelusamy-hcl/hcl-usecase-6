@@ -58,7 +58,7 @@ data "archive_file" "lambda_stop" {
 
 resource "aws_lambda_function" "stop_ec2_instances" {
 function_name = "stop-ec2-instances"
-role          = aws_iam_role.lambda_ec2_role.arn
+role          = aws_iam_role.lambda_ec2_control.arn
 handler       = "stop_lambda_function.lambda_handler"
 runtime       = "python3.12"
 filename      = "stop_lambda_function_payload.zip"
